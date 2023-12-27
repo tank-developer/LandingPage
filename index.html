@@ -84,12 +84,12 @@
 			<p class="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Download our app:</p>
 			<div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in" >
 				<!-- <img src="App Store.svg" class="h-12 pr-4 bounce-top-icons" id="imgClick"> -->
-				<a onclick="jump()" id="appstore">
+				<a id="appstore" onclick="jump()" >
 					<img src="App Store.svg" width="140px" height="70px"> 
 				</a>
 
 				<!-- <img src="Play Store.svg" class="h-12 bounce-top-icons"> -->
-				<a  onclick="popup()" id="googleplay">
+				<a id="googleplay" onclick="popup()" >
 					<img src="Play Store.svg" width="140px" height="70px" > 
 				</a>
 			</div>
@@ -125,33 +125,35 @@
 	function jump() {
 		var a = document.getElementById('appstore');
 		a.href="https://apps.apple.com/cn/app/%E7%95%99%E6%96%87/id6472631131"
+		a.click();
 
-		if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面
-			var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
-			if (ua.match(/MicroMessenger/i) == "micromessenger") {
-					//在微信中打开
-					alert("请在浏览器中打开");
-			}
-			if (ua.match(/WeiBo/i) == "weibo") {
-					// alert("请在浏览器中打开");
-					//在新浪微博客户端打开
-			}
-			if (ua.match(/QQ/i) == "qq") {
-					//在QQ空间打开
-					// alert("请在浏览器中打开");
-			}
-			if (browser.versions.ios) {
-					//是否在IOS浏览器打开
-					a.click();
-			} 
-			if(browser.versions.android){
-					//是否在安卓浏览器打开
-					a.click();
-			}
-		} else {
-        	//否则就是PC浏览器打开
-			a.click();
-		}
+		// if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面
+		// 	var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+		// 	if (ua.match(/MicroMessenger/i) == "micromessenger") {
+		// 			//在微信中打开
+		// 			alert("请在浏览器中打开");
+		// 	}
+		// 	if (ua.match(/WeiBo/i) == "weibo") {
+		// 			// alert("请在浏览器中打开");
+		// 			a.click();
+		// 			//在新浪微博客户端打开
+		// 	}
+		// 	if (ua.match(/QQ/i) == "qq") {
+		// 			//在QQ空间打开
+		// 			a.click();
+		// 	}
+		// 	if (browser.versions.ios) {
+		// 			//是否在IOS浏览器打开
+		// 			a.click();
+		// 	} 
+		// 	if(browser.versions.android){
+		// 			//是否在安卓浏览器打开
+		// 			a.click();
+		// 	}
+		// } else {
+        // 	//否则就是PC浏览器打开
+		// 	a.click();
+		// }
 	}
 	var browser = {
     versions: function () {
